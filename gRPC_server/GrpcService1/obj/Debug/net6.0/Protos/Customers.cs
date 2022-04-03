@@ -24,32 +24,33 @@ namespace GrpcService1 {
     static CustomersReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQcm90b3MvY3VzdG9tZXJzLnByb3RvIiUKE0N1c3RvbWVyTG9va3VwTW9k",
-            "ZWwSDgoGdXNlcklkGAEgASgFImgKDUN1c3RvbWVyTW9kZWwSEQoJZmlyc3RO",
-            "YW1lGAEgASgJEhAKCGxhc3ROYW1lGAIgASgJEhQKDGVtYWlsQWRkcmVzcxgD",
-            "IAEoCRIPCgdpc0FsaXZlGAQgASgIEgsKA2FnZRgFIAEoBTJDCghDdXN0b21l",
-            "chI3Cg9HZXRDdXN0b21lckluZm8SFC5DdXN0b21lckxvb2t1cE1vZGVsGg4u",
-            "Q3VzdG9tZXJNb2RlbEIPqgIMR3JwY1NlcnZpY2UxYgZwcm90bzM="));
+            "ChZQcm90b3MvY3VzdG9tZXJzLnByb3RvIg4KDFJlcXVlc3RNb2RlbCIlCgpS",
+            "ZXBseU1vZGVsEhcKBnBlcnNvbhgBIAMoCzIHLlBlcnNvbiJGCgZQZXJzb24S",
+            "CgoCaWQYASABKAUSEQoJZmlyc3ROYW1lGAIgASgJEhAKCGxhc3ROYW1lGAMg",
+            "ASgJEgsKA2FnZRgEIAEoBTIzCghDdXN0b21lchInCglHZXRQZW9wbGUSDS5S",
+            "ZXF1ZXN0TW9kZWwaCy5SZXBseU1vZGVsQg+qAgxHcnBjU2VydmljZTFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.CustomerLookupModel), global::GrpcService1.CustomerLookupModel.Parser, new[]{ "UserId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.CustomerModel), global::GrpcService1.CustomerModel.Parser, new[]{ "FirstName", "LastName", "EmailAddress", "IsAlive", "Age" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.RequestModel), global::GrpcService1.RequestModel.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.ReplyModel), global::GrpcService1.ReplyModel.Parser, new[]{ "Person" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcService1.Person), global::GrpcService1.Person.Parser, new[]{ "Id", "FirstName", "LastName", "Age" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class CustomerLookupModel : pb::IMessage<CustomerLookupModel>
+  public sealed partial class RequestModel : pb::IMessage<RequestModel>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CustomerLookupModel> _parser = new pb::MessageParser<CustomerLookupModel>(() => new CustomerLookupModel());
+    private static readonly pb::MessageParser<RequestModel> _parser = new pb::MessageParser<RequestModel>(() => new RequestModel());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CustomerLookupModel> Parser { get { return _parser; } }
+    public static pb::MessageParser<RequestModel> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -62,55 +63,41 @@ namespace GrpcService1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerLookupModel() {
+    public RequestModel() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerLookupModel(CustomerLookupModel other) : this() {
-      userId_ = other.userId_;
+    public RequestModel(RequestModel other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerLookupModel Clone() {
-      return new CustomerLookupModel(this);
-    }
-
-    /// <summary>Field number for the "userId" field.</summary>
-    public const int UserIdFieldNumber = 1;
-    private int userId_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int UserId {
-      get { return userId_; }
-      set {
-        userId_ = value;
-      }
+    public RequestModel Clone() {
+      return new RequestModel(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CustomerLookupModel);
+      return Equals(other as RequestModel);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CustomerLookupModel other) {
+    public bool Equals(RequestModel other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (UserId != other.UserId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (UserId != 0) hash ^= UserId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -127,10 +114,6 @@ namespace GrpcService1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (UserId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(UserId);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -140,10 +123,6 @@ namespace GrpcService1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (UserId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(UserId);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -153,9 +132,6 @@ namespace GrpcService1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (UserId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UserId);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -163,12 +139,9 @@ namespace GrpcService1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CustomerLookupModel other) {
+    public void MergeFrom(RequestModel other) {
       if (other == null) {
         return;
-      }
-      if (other.UserId != 0) {
-        UserId = other.UserId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -184,8 +157,161 @@ namespace GrpcService1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            UserId = input.ReadInt32();
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ReplyModel : pb::IMessage<ReplyModel>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReplyModel> _parser = new pb::MessageParser<ReplyModel>(() => new ReplyModel());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ReplyModel> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcService1.CustomersReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReplyModel() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReplyModel(ReplyModel other) : this() {
+      person_ = other.person_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ReplyModel Clone() {
+      return new ReplyModel(this);
+    }
+
+    /// <summary>Field number for the "person" field.</summary>
+    public const int PersonFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::GrpcService1.Person> _repeated_person_codec
+        = pb::FieldCodec.ForMessage(10, global::GrpcService1.Person.Parser);
+    private readonly pbc::RepeatedField<global::GrpcService1.Person> person_ = new pbc::RepeatedField<global::GrpcService1.Person>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::GrpcService1.Person> Person {
+      get { return person_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ReplyModel);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ReplyModel other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!person_.Equals(other.person_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= person_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      person_.WriteTo(output, _repeated_person_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      person_.WriteTo(ref output, _repeated_person_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += person_.CalculateSize(_repeated_person_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ReplyModel other) {
+      if (other == null) {
+        return;
+      }
+      person_.Add(other.person_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            person_.AddEntriesFrom(input, _repeated_person_codec);
             break;
           }
         }
@@ -202,8 +328,8 @@ namespace GrpcService1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            UserId = input.ReadInt32();
+          case 10: {
+            person_.AddEntriesFrom(ref input, _repeated_person_codec);
             break;
           }
         }
@@ -213,19 +339,19 @@ namespace GrpcService1 {
 
   }
 
-  public sealed partial class CustomerModel : pb::IMessage<CustomerModel>
+  public sealed partial class Person : pb::IMessage<Person>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<CustomerModel> _parser = new pb::MessageParser<CustomerModel>(() => new CustomerModel());
+    private static readonly pb::MessageParser<Person> _parser = new pb::MessageParser<Person>(() => new Person());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<CustomerModel> Parser { get { return _parser; } }
+    public static pb::MessageParser<Person> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::GrpcService1.CustomersReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GrpcService1.CustomersReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,29 +360,39 @@ namespace GrpcService1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerModel() {
+    public Person() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerModel(CustomerModel other) : this() {
+    public Person(Person other) : this() {
+      id_ = other.id_;
       firstName_ = other.firstName_;
       lastName_ = other.lastName_;
-      emailAddress_ = other.emailAddress_;
-      isAlive_ = other.isAlive_;
       age_ = other.age_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public CustomerModel Clone() {
-      return new CustomerModel(this);
+    public Person Clone() {
+      return new Person(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
     }
 
     /// <summary>Field number for the "firstName" field.</summary>
-    public const int FirstNameFieldNumber = 1;
+    public const int FirstNameFieldNumber = 2;
     private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FirstName {
@@ -267,7 +403,7 @@ namespace GrpcService1 {
     }
 
     /// <summary>Field number for the "lastName" field.</summary>
-    public const int LastNameFieldNumber = 2;
+    public const int LastNameFieldNumber = 3;
     private string lastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string LastName {
@@ -277,30 +413,8 @@ namespace GrpcService1 {
       }
     }
 
-    /// <summary>Field number for the "emailAddress" field.</summary>
-    public const int EmailAddressFieldNumber = 3;
-    private string emailAddress_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string EmailAddress {
-      get { return emailAddress_; }
-      set {
-        emailAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "isAlive" field.</summary>
-    public const int IsAliveFieldNumber = 4;
-    private bool isAlive_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool IsAlive {
-      get { return isAlive_; }
-      set {
-        isAlive_ = value;
-      }
-    }
-
     /// <summary>Field number for the "age" field.</summary>
-    public const int AgeFieldNumber = 5;
+    public const int AgeFieldNumber = 4;
     private int age_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Age {
@@ -312,21 +426,20 @@ namespace GrpcService1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as CustomerModel);
+      return Equals(other as Person);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(CustomerModel other) {
+    public bool Equals(Person other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (FirstName != other.FirstName) return false;
       if (LastName != other.LastName) return false;
-      if (EmailAddress != other.EmailAddress) return false;
-      if (IsAlive != other.IsAlive) return false;
       if (Age != other.Age) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -334,10 +447,9 @@ namespace GrpcService1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
-      if (EmailAddress.Length != 0) hash ^= EmailAddress.GetHashCode();
-      if (IsAlive != false) hash ^= IsAlive.GetHashCode();
       if (Age != 0) hash ^= Age.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -355,24 +467,20 @@ namespace GrpcService1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
       if (FirstName.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteString(FirstName);
       }
       if (LastName.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(LastName);
       }
-      if (EmailAddress.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EmailAddress);
-      }
-      if (IsAlive != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsAlive);
-      }
       if (Age != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Age);
       }
       if (_unknownFields != null) {
@@ -384,24 +492,20 @@ namespace GrpcService1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
       if (FirstName.Length != 0) {
-        output.WriteRawTag(10);
+        output.WriteRawTag(18);
         output.WriteString(FirstName);
       }
       if (LastName.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(LastName);
       }
-      if (EmailAddress.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(EmailAddress);
-      }
-      if (IsAlive != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsAlive);
-      }
       if (Age != 0) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteInt32(Age);
       }
       if (_unknownFields != null) {
@@ -413,17 +517,14 @@ namespace GrpcService1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
       if (FirstName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
       }
       if (LastName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
-      }
-      if (EmailAddress.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(EmailAddress);
-      }
-      if (IsAlive != false) {
-        size += 1 + 1;
       }
       if (Age != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Age);
@@ -435,21 +536,18 @@ namespace GrpcService1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(CustomerModel other) {
+    public void MergeFrom(Person other) {
       if (other == null) {
         return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
       }
       if (other.FirstName.Length != 0) {
         FirstName = other.FirstName;
       }
       if (other.LastName.Length != 0) {
         LastName = other.LastName;
-      }
-      if (other.EmailAddress.Length != 0) {
-        EmailAddress = other.EmailAddress;
-      }
-      if (other.IsAlive != false) {
-        IsAlive = other.IsAlive;
       }
       if (other.Age != 0) {
         Age = other.Age;
@@ -468,23 +566,19 @@ namespace GrpcService1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            FirstName = input.ReadString();
+          case 8: {
+            Id = input.ReadInt32();
             break;
           }
           case 18: {
-            LastName = input.ReadString();
+            FirstName = input.ReadString();
             break;
           }
           case 26: {
-            EmailAddress = input.ReadString();
+            LastName = input.ReadString();
             break;
           }
           case 32: {
-            IsAlive = input.ReadBool();
-            break;
-          }
-          case 40: {
             Age = input.ReadInt32();
             break;
           }
@@ -502,23 +596,19 @@ namespace GrpcService1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            FirstName = input.ReadString();
+          case 8: {
+            Id = input.ReadInt32();
             break;
           }
           case 18: {
-            LastName = input.ReadString();
+            FirstName = input.ReadString();
             break;
           }
           case 26: {
-            EmailAddress = input.ReadString();
+            LastName = input.ReadString();
             break;
           }
           case 32: {
-            IsAlive = input.ReadBool();
-            break;
-          }
-          case 40: {
             Age = input.ReadInt32();
             break;
           }

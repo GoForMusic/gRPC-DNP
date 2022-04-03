@@ -12,17 +12,17 @@ public class Program
         using var channel = GrpcChannel.ForAddress("http://localhost:5122");
         var client = new Customer.CustomerClient(channel);
 
-        for (int i = 0; i <= 2; i++)
-        {
-            var clientRequested = new CustomerLookupModel
+        
+            var reply = client.GetPeople(new RequestModel());
+
+            Person[] persons = reply.Person.ToArray();
+
+
+            for (int i = 0; i < persons.Length; i++)
             {
-                UserId = i
-            };
-            var reply = client.GetCustomerInfoAsync(clientRequested).ResponseAsync;
-            Console.WriteLine($"{reply.Result.FirstName}, {reply.Result.LastName}");
-        }
-        
-        
+                Console.WriteLine(persons[i]);
+            }
+            
         
     }
 }

@@ -46,17 +46,17 @@ namespace GrpcService1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcService1.CustomerLookupModel> __Marshaller_CustomerLookupModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService1.CustomerLookupModel.Parser));
+    static readonly grpc::Marshaller<global::GrpcService1.RequestModel> __Marshaller_RequestModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService1.RequestModel.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcService1.CustomerModel> __Marshaller_CustomerModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService1.CustomerModel.Parser));
+    static readonly grpc::Marshaller<global::GrpcService1.ReplyModel> __Marshaller_ReplyModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcService1.ReplyModel.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcService1.CustomerLookupModel, global::GrpcService1.CustomerModel> __Method_GetCustomerInfo = new grpc::Method<global::GrpcService1.CustomerLookupModel, global::GrpcService1.CustomerModel>(
+    static readonly grpc::Method<global::GrpcService1.RequestModel, global::GrpcService1.ReplyModel> __Method_GetPeople = new grpc::Method<global::GrpcService1.RequestModel, global::GrpcService1.ReplyModel>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetCustomerInfo",
-        __Marshaller_CustomerLookupModel,
-        __Marshaller_CustomerModel);
+        "GetPeople",
+        __Marshaller_RequestModel,
+        __Marshaller_ReplyModel);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -69,7 +69,7 @@ namespace GrpcService1 {
     public abstract partial class CustomerBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcService1.CustomerModel> GetCustomerInfo(global::GrpcService1.CustomerLookupModel request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcService1.ReplyModel> GetPeople(global::GrpcService1.RequestModel request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -82,7 +82,7 @@ namespace GrpcService1 {
     public static grpc::ServerServiceDefinition BindService(CustomerBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetCustomerInfo, serviceImpl.GetCustomerInfo).Build();
+          .AddMethod(__Method_GetPeople, serviceImpl.GetPeople).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -92,7 +92,7 @@ namespace GrpcService1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, CustomerBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetCustomerInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcService1.CustomerLookupModel, global::GrpcService1.CustomerModel>(serviceImpl.GetCustomerInfo));
+      serviceBinder.AddMethod(__Method_GetPeople, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcService1.RequestModel, global::GrpcService1.ReplyModel>(serviceImpl.GetPeople));
     }
 
   }

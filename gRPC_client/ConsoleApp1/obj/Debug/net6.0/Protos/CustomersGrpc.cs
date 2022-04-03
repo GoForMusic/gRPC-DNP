@@ -46,17 +46,17 @@ namespace ConsoleApp1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ConsoleApp1.CustomerLookupModel> __Marshaller_CustomerLookupModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ConsoleApp1.CustomerLookupModel.Parser));
+    static readonly grpc::Marshaller<global::ConsoleApp1.RequestModel> __Marshaller_RequestModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ConsoleApp1.RequestModel.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::ConsoleApp1.CustomerModel> __Marshaller_CustomerModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ConsoleApp1.CustomerModel.Parser));
+    static readonly grpc::Marshaller<global::ConsoleApp1.ReplyModel> __Marshaller_ReplyModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ConsoleApp1.ReplyModel.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ConsoleApp1.CustomerLookupModel, global::ConsoleApp1.CustomerModel> __Method_GetCustomerInfo = new grpc::Method<global::ConsoleApp1.CustomerLookupModel, global::ConsoleApp1.CustomerModel>(
+    static readonly grpc::Method<global::ConsoleApp1.RequestModel, global::ConsoleApp1.ReplyModel> __Method_GetPeople = new grpc::Method<global::ConsoleApp1.RequestModel, global::ConsoleApp1.ReplyModel>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "GetCustomerInfo",
-        __Marshaller_CustomerLookupModel,
-        __Marshaller_CustomerModel);
+        "GetPeople",
+        __Marshaller_RequestModel,
+        __Marshaller_ReplyModel);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -92,24 +92,24 @@ namespace ConsoleApp1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ConsoleApp1.CustomerModel GetCustomerInfo(global::ConsoleApp1.CustomerLookupModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::ConsoleApp1.ReplyModel GetPeople(global::ConsoleApp1.RequestModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetCustomerInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPeople(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::ConsoleApp1.CustomerModel GetCustomerInfo(global::ConsoleApp1.CustomerLookupModel request, grpc::CallOptions options)
+      public virtual global::ConsoleApp1.ReplyModel GetPeople(global::ConsoleApp1.RequestModel request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_GetCustomerInfo, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_GetPeople, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ConsoleApp1.CustomerModel> GetCustomerInfoAsync(global::ConsoleApp1.CustomerLookupModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::ConsoleApp1.ReplyModel> GetPeopleAsync(global::ConsoleApp1.RequestModel request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GetCustomerInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GetPeopleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::ConsoleApp1.CustomerModel> GetCustomerInfoAsync(global::ConsoleApp1.CustomerLookupModel request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::ConsoleApp1.ReplyModel> GetPeopleAsync(global::ConsoleApp1.RequestModel request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_GetCustomerInfo, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_GetPeople, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
